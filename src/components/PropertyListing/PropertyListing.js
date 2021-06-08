@@ -16,6 +16,21 @@ const DUMMY_PROPERTY = {
     mainImage: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/38k/37655/53588679/37655_CAM170036_IMG_01_0000_max_476x317.jpg'
 };
 
+const getProprtyData = fetch("http://localhost:3000/api/properties")
+  .then((response) => response.json())
+  .then((propertyData) => {
+    return propertyData;
+  }
+);
+
+const logPropertyData = () => {
+  getProprtyData.then((data) => {
+    console.log(data);
+  });
+};
+  
+logPropertyData();
+
 const PropertyListing = () => {
     return (
         <div className="PropertyListing">
